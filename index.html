@@ -140,27 +140,27 @@
             jobTitleChange();
             setInterval(jobTitleChange,7000); 
 
-        var list = document.getElementsByClassName("list");
-        var mobileList = document.getElementsByClassName("mobileList");
-        var lastActive = list[0];
-        var mobileLastActive = mobileList[0];
-        var index = 0;
+        const list = document.getElementsByClassName("list");
+        const mobileList = document.getElementsByClassName("mobileList");
+        let lastActive = list[0];
+        let mobileLastActive = mobileList[0];
+        let index = 0;
         list[0].style.opacity = 1;
         list[0].classList.add('activeList');
         mobileList[0].style.opacity = 1;
         mobileList[0].classList.add('sidebarActive');
         function clearBoth(){
-            for(var j=0; j<list.length; j++){
+            for(var j=0; j < list.length; j++){
                     list[j].style.opacity ="";
                 }
-            for(var k=0; k<mobileList.length; k++){
+            for(var k=0; k < mobileList.length; k++){
                 mobileList[k].style.opacity="";
             }
             lastActive.classList.remove('activeList');
             mobileLastActive.classList.remove('sidebarActive');
         }
 
-        for(var i = 0; i<list.length; i++){
+        for(var i = 0; i < list.length; i++){
             list[i].number = i;
             list[i].onclick = function(){
                 clearBoth();
@@ -174,7 +174,7 @@
             }
         }
 
-        for(var i = 0; i<mobileList.length; i++){
+        for(var i = 0; i < mobileList.length; i++){
             mobileList[i].number = i;
             mobileList[i].onclick = function(){
                 clearBoth();
