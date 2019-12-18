@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>John Doe</title>
+</head>
+<body>
+    <div class="page">
+<!---------------web header----------------->
+        <header class="main-header-web">
+            <div class="main-header-web-container">
+                <div class="site-title-web">
+                    <p>John <span>Doe</span></p>
+                </div>
+                <div class="menu-block-web">
+                    <div class="menu-block-web-content">
+                        <ul>
+                            <li><a class="list" href="#">Home</a></li>
+                            <li><a class="list" href="#">Resume</a></li>
+                            <li><a class="list" href="#">Services</a></li>
+                            <li><a class="list" href="#">Blog</a></li>
+                            <li><a class="list" href="#">Contact</a></li>
+                        </ul>                       
+                    </div>
+                </div>
+            </div>    
+        </header>
+<!---------------molile header------------------>
+        <header class="main-header-mobile">
+            <div class="main-header-moibile-container">
+                <div class="site-title-mobile">
+                    <p>John Doe</p>
+                </div>
+                <div class="toggle-btn" onclick="toggleSidebar()">
+                    <a>
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+<!---------------mobile sidebar----------------->           
+         <div class="sidebar-container">
+            <div id="sidebar" class="sidebar">
+                <ul>
+                    <li><a class="mobileList" href="#">Home</a></li>
+                    <li><a class="mobileList" href="#">Resume</a></li>
+                    <li><a class="mobileList" href="#">Services</a></li>
+                    <li><a class="mobileList" href="#">Blog</a></li>
+                    <li><a class="mobileList" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+<!---------------main content------------------->
+        <main class="main-content-block">
+            <div class="top-container">
+                <div class="photo-container">
+                    <img src="/img/photo.png" alt="photo">  
+                </div>
+
+                <div class="basic-information">
+                    <div class="name">
+                        <h1>John Doe</h1>
+                    </div>
+                    <div class="job">
+                        <p id="jobTitle1">Web Desinger</p>
+                        <p id="jobTitle2" style="display:none;">Frontend-developer</p>
+
+                    </div>
+                    <div class="social-media-link">
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-container">
+                <div class="introduction">
+                    <h1>About <span>Me</span></h1>
+                    <p>Hello! I’m John Doe. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum ullamcorper sem, at placerat dolor volutpat ac. Duis nulla enim, condimentum nec ultricies.</p>
+                </div>
+                <div class="information">
+                    <ul>
+                        <li>
+                            <span class="title">Age</span>
+                            <span class="value">29</span>
+                        </li>
+                        <li>
+                            <span class="title">Residence</span>
+                            <span class="value">Australia</span>
+                        </li>
+                        <li>
+                            <span class="title">Address</span>
+                            <span class="value">Level 3 / 57 Coronation Drive, Brisbane</span>
+                         </li>
+                        <li>
+                            <span class="title">e-mail</span>
+                            <span class="value"> 
+                                <a href="mailto:email@example.com">info@jiangren.com.au</a>       
+                            </span>
+                        </li>
+                        <li>
+                            <span class="title">Phone</span>
+                            <span class="value">+0123 123 456 789</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer>
+                <div class="copyrights">© 2017 All rights reserved. Designed by 
+                    <a href="http://jiangren.com.au">Jiangren</a>
+                </div>
+        </footer>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function toggleSidebar(){
+                document.getElementById("sidebar").classList.toggle('active');
+            }
+            
+        const jobTitle1 = document.getElementById("jobTitle1");
+        const jobTitle2 = document.getElementById("jobTitle2");
+        function jobTitleChange(){
+            if(jobTitle1.style.display=="") {
+                jobTitle1.style.display="none";
+                $("#jobTitle2").fadeIn(1000).fadeTo(5000,1).fadeOut(1000);
+            } else {
+                jobTitle2.style.display="none";
+                $("#jobTitle1").fadeIn(1000).fadeTo(5000,1).fadeOut(1000);
+            }
+        }
+            jobTitleChange();
+            setInterval(jobTitleChange,7000); 
+
+        var list = document.getElementsByClassName("list");
+        var mobileList = document.getElementsByClassName("mobileList");
+        var lastActive = list[0];
+        var mobileLastActive = mobileList[0];
+        var index = 0;
+        list[0].style.opacity = 1;
+        list[0].classList.add('activeList');
+        mobileList[0].style.opacity = 1;
+        mobileList[0].classList.add('sidebarActive');
+        function clearBoth(){
+            for(var j=0; j<list.length; j++){
+                    list[j].style.opacity ="";
+                }
+            for(var k=0; k<mobileList.length; k++){
+                mobileList[k].style.opacity="";
+            }
+            lastActive.classList.remove('activeList');
+            mobileLastActive.classList.remove('sidebarActive');
+        }
+
+        for(var i = 0; i<list.length; i++){
+            list[i].number = i;
+            list[i].onclick = function(){
+                clearBoth();
+                this.style.opacity = 1;
+                this.classList.add('activeList');
+                index = this.number;
+                mobileList[index].style.opacity = 1;
+                mobileList[index].classList.add('sidebarActive');
+                lastActive = this;
+                mobileLastActive = mobileList[index];
+            }
+        }
+
+        for(var i = 0; i<mobileList.length; i++){
+            mobileList[i].number = i;
+            mobileList[i].onclick = function(){
+                clearBoth();
+                this.style.opacity = 1;
+                this.classList.add('sidebarActive');
+                index = this.number;
+                list[index].style.opacity = 1;
+                list[index].classList.add('activeList');
+                mobileLastActive = this;
+                lastActive = list[index];
+            }
+        }
+
+    </script>
+</body>
+</html>
