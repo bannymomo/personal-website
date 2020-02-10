@@ -75,7 +75,7 @@
               <h1>John Doe</h1>
             </div>
             <div class="job">
-              <p id="jobTitle1">Web Designer</p>
+              <!-- <p id="jobTitle1">Web Designer</p> -->
               <p id="jobTitle2" style="display:none;">Frontend-developer</p>
             </div>
             <div class="social-media-link">
@@ -138,25 +138,25 @@
         document.getElementById("sidebar").classList.toggle("active");
       }
 
-      const jobTitle1 = document.getElementById("jobTitle1");
-      const jobTitle2 = document.getElementById("jobTitle2");
-      function jobTitleChange() {
-        if (jobTitle1.style.display == "") {
-          jobTitle1.style.display = "none";
-          $("#jobTitle2")
-            .fadeIn(1000)
-            .fadeTo(5000, 1)
-            .fadeOut(1000);
-        } else {
-          jobTitle2.style.display = "none";
-          $("#jobTitle1")
-            .fadeIn(1000)
-            .fadeTo(5000, 1)
-            .fadeOut(1000);
-        }
-      }
-      jobTitleChange();
-      setInterval(jobTitleChange, 7000);
+      //   const jobTitle1 = document.getElementById("jobTitle1");
+      //   const jobTitle2 = document.getElementById("jobTitle2");
+      //   function jobTitleChange() {
+      //     if (jobTitle1.style.display == "") {
+      //       jobTitle1.style.display = "none";
+      //       $("#jobTitle2")
+      //         .fadeIn(1000)
+      //         .fadeTo(5000, 1)
+      //         .fadeOut(1000);
+      //     } else {
+      //       jobTitle2.style.display = "none";
+      //       $("#jobTitle1")
+      //         .fadeIn(1000)
+      //         .fadeTo(5000, 1)
+      //         .fadeOut(1000);
+      //     }
+      //   }
+      //   jobTitleChange();
+      //   setInterval(jobTitleChange, 7000);
 
       const list = document.getElementsByClassName("list");
       const mobileList = document.getElementsByClassName("mobileList");
